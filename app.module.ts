@@ -7,6 +7,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 
 import { DataSourceBackendExampleComponent } from './src/data-source-backend-example.component'
+import { NumberDirective } from './src/numbers-only.directive';
 
 @Component({
     selector: 'app-component',
@@ -26,7 +27,8 @@ export class AppComponent {}
     ],
     declarations: [
         AppComponent,
-        DataSourceBackendExampleComponent
+        DataSourceBackendExampleComponent,
+        NumberDirective
     ],
     bootstrap: [AppComponent]
 })

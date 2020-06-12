@@ -15,7 +15,7 @@ export class DataSourceBackendExampleComponent implements OnInit {
     }
 
     ngOnInit() {
-      this.dataService.getCountries();
+      //this.dataService.getCountries();
     }
 
 }
