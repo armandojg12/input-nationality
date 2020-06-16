@@ -17,5 +17,39 @@ export class DataSourceBackendExampleComponent implements OnInit {
     ngOnInit() {
       //this.dataService.getCountries();
     }
+    test2(t) {
+        t.filter('11');
+    }
+
+band = true;
+    test(t) {
+      const value = t.searchTerm;
+      
+      console.log(t);
+      console.log(t.searchTerm);
+      console.log(t.searchInput.nativeElement.value);
+      t.searchTerm = value.replace(/\D/g, "");
+      t.searchInput.nativeElement.value = t.searchTerm;
+      console.log(value.length);
+      console.log(t.searchTerm.length);
+      if (value.length !== t.searchTerm.length) {
+        console.log('refill');
+        t.filter(t.searchTerm);
+      }
+      console.log(t.searchTerm);
+      console.log(t.searchInput.nativeElement.value);
+      
+      this.band = !this.band;
+   
+    }
+
+    log(e) {
+      console.log(e);
+    }
+
+    tucu() {
+      console.log(document.getElementById("myAnchor"));
+      document.getElementById("myAnchor").focus();
+    }
 
 }

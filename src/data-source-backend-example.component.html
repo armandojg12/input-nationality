@@ -9,10 +9,10 @@
            bindValue="idPais"
            [(ngModel)]="selectedPersonId">
 </ng-select>
-
-<ng-select [items]="[1,2,3,4,5,6,7,8,9]"
+<button (click)="test2(t)">Action</button>
+<ng-select #t [items]="[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]"
 [inputAttrs]="numbersonly"
-           >
+(search)="test(t)">
 </ng-select>
 <!--ng-select [items]="dataService.countries$ | async"
            bindLabel="name"
@@ -23,4 +23,14 @@
 <br/>Selected: {{selectedPersonId}}
 
 <br/>
-<input type="text" [ngModel]="value" numbersonly/>
+<!--input type="text" [ngModel]="value" numbersonly/-->
+<ng-select #t2 [items]="[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]"
+[searchable]="false" (open)="tucu()">
+           <ng-template ng-header-tmp>
+        <div class="ng-input">
+          <input id="myAnchor" (input)="t2.filter($event.target.value)" numbersonly role="combobox" type="text" autocorrect="off" autocapitalize="off" autocomplete="aca0e03ff1b9" aria-expanded="true" aria-owns="aca0e03ff1b9"/>
+          </div>
+    </ng-template>
+</ng-select>
+
+<input id="myAnchor" numbersonly role="combobox" type="text" autocorrect="off" autocapitalize="off" autocomplete="aca0e03ff1b9" aria-expanded="true" aria-owns="aca0e03ff1b9"/>
